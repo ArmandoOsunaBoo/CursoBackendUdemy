@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    link(href="../css/sb-admin-2.min.css" rel="stylesheet")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css")
+    link(href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet")
+    title Actions
+  body
+                div(class="card shadow mb-12")
+                  div(class="card-header py-12")
+                    h6(class="m-0 font-weight-bold text-primary") Tabla de acciones del usuario
+                    div(class="card-body")
+                      div(class="table-responsive" style="overflow:hidden")
+                        div(id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4")
+                         div(class="row")
+                          div(class="col-sm-12 col-md-12")
+                            div(class="dataTables_length" id="dataTable_length")
+                              div(class="col-sm-12 col-md-12")
+                                div(id="dataTable_filter" class="dataTables_filter")
+                                  div(class="row")
+                                    div(class="col-sm-12")
+                                      table(class="table table-bordered dataTable" id="dataTable" role="grid" aria-describedby="dataTable_info" style="width: 100%;" width="100%" cellspacing="0")
+                                        thead
+                                          tr(role="row")
+                                          th(class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 209px;" aria-sort="ascending" aria-label="Name: activate to sort column descending") ID
+                                          th(class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 314px;" aria-label="Position: activate to sort column ascending") Nombre
+                                          th(class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 152px;" aria-label="Office: activate to sort column ascending") Fecha creacion
+                                          th(class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 141px;" aria-label="Start date: activate to sort column ascending") Fecha de actualización
+                                        tbody
+                                        each val in miObj
+                                          tr(role="row" class="odd")
+                                            td(class="sorting")= val.id
+                                            td(class="sorting")= val.nombre
+                                            td(class="sorting")= val.createdAt
+                                            td(class="sorting")= val.updatedAt
+                                        tfoot
+                                          tr
+                                            th(rowspan="1" colspan="1") ID
+                                            th(rowspan="1" colspan="1") Nombre
+                                            th(rowspan="1" colspan="1") createdAt
+                                            th(rowspan="1" colspan="1") updatedAt

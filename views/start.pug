@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    link(href="css/sb-admin-2.min.css" rel="stylesheet")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title inicio
+  body
+  div(class="container-fluid mb-12")
+    div(class="d-sm-flex align-items-center justify-content-between mb-4")
+      h1(class="h1 mb-0 text-gray-800") Dashboard
+      form(action="/sessions?_method=DELETE" method="POST" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm")
+        input(class="btn btn-primary btn-user btn-block" type="submit" value="Cerrar sesion")
+    div(class="row mb-12")
+      div(class="d-flex flex-column mb-12")
+        div(class="card shadow mb-12")
+          div(class="card shadow mb-12")
+            div(class="card-header py-3")
+              h6(class="m-0 font-weight-bold text-primary")= "usuario: "+user.email
+                div(class="card-body")
+                  div(class="text-center")
+                    img(class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="")
+                  p Usuarios Conectados.
+                  p#connected
+                  a( target="_blank" rel="nofollow" href="https://undraw.co/") Busca más imágenes asi en unDraw →
+                  script(src="/socket.io/socket.io.js")
+                  script.
+                    socket = io.connect(window.location.origin,{query:'loggeduser=#{user.id}'});
+                    
+                    socket.on('count_upd',function(data){
+                      console.log(data)
+                      document.querySelector('#connected').innerHTML =  data.count
+                      });
+                      
+                    socket.on('new_action',function(data){
+                      console.log(data);
+                      });

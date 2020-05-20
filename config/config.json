@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": null,
+    "password": null,
+    "database": "mi_base_de_datos",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "operatorsAliases": false,
+    "storage":"./mi_base_de_datos.sqlite3"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "atjqgkxyjvoiqn",
+    "password": "e270d158bb90757399d79fdd70b399561df34c3e79b5dbe32ff866c75250193e",
+    "database": "d5al9vpbqec663",
+    "host": "ec2-54-165-36-134.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}
